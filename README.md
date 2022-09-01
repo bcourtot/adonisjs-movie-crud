@@ -1,2 +1,2 @@
 # adonisjs-movie-crud
-A project made with adonisjs for an introduction at nodejs
+A project made with adonisjs as an introduction at nodejs
