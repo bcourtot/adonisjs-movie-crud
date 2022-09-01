@@ -1,0 +1,33 @@
+@layout('layouts/main')
+@set('title', 'Ajouter un film')
+
+@section('body')
+<main class="container">
+  <section>
+    <h1>Ajouter un film</h1>
+  </section>
+
+  <form class="w-100 update-form" action="{{ route('movie.store') }}" method="POST">
+    <table class="table">
+      <tr>
+        <th>Nom du film</th>
+        <td><input required type="text" name="name" placeholder="Entrer un nom"/></td>
+      </tr>
+      <tr>
+        <th>Genre</th>
+        <td><input required type="text" name="genre" placeholder="Entrer un genre"/></td>
+      </tr>
+      <tr>
+        <th>Réalisateur</th>
+        <td><input required type="text" name="director" placeholder="Entrer le rom du réalisateur"/></td>
+      </tr>
+      <tr>
+        <th>Date de sortie</th>
+        <td><input required type="date" name="year"/></td>
+      </tr>
+    </table>
+    <input class="mx-auto btn btn-success" type="submit" value="Ajouter le film"/>
+  </form>
+</main>
+
+@endsection

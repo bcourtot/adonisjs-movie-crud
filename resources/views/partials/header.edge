@@ -1,0 +1,21 @@
+  <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom container">
+    <a href="{{ route('home') }}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img class="mb-4" src="/assets/img/logo.png" alt="cinecool" width="72" height="72">
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="{{ route('home') }}" class="px-2 custom-link">Films</a></li>
+      <li><a href="{{ route('health') }}" class="px-2 custom-link">Santé</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      @if(auth.isGuest)
+        <a class="btn btn-outline-primary me-2 custom-secondary" href="{{ route('login') }}" role="button">Se connecter</a>
+        <a class="btn btn-primary custom-primary" href="{{ route('register') }}" role="button">S'enregistrer</a>
+      @endif
+      @if(auth.isLoggedIn)
+        <a class="btn btn-outline-primary custom-primary" href="{{ route('logout') }}" role="button">Se déconnecter</a>
+      @endif
+    </div>
+
+  </header>

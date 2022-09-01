@@ -1,0 +1,9 @@
+@layout('layouts/main')
+@set('title', 'Erreur 404')
+
+@section('body')
+<main class="container mx-auto my-5">
+  <img class="" src="/assets/img/404.jpg" alt="erreur 404" width="400px" height="400px">
+  <a href="{{ route('home') }}" class="btn btn-outline-dark mt-3">Retour à l'accueil</a>
+</main>
+@endsection

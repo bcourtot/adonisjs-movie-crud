@@ -1,0 +1,14 @@
+.custom-link {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+
+.custom-link:hover  {
+  text-decoration: none;
+  color: #db0101;
+}
+
+td, th, h1, h2, h3, h4, h5, h6, p, a {
+  color: #e0e0e0;
+  font-family: 'Expletus Sans', cursive;
+}

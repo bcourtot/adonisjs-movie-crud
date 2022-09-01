@@ -1,0 +1,16 @@
+  <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto container">
+    <p class="col-md-4 mb-0 text-muted">© 2022 Brice Courtot - LP MIAW</p>
+
+    <a href="{{ route('home') }}" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img class="mb-4" src="/assets/img/logo.png" alt="cinecool" width="72" height="72">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="{{ route('home') }}" class="nav-link px-2 text-muted">Films</a></li>
+      <li class="nav-item"><a href="{{ route('health') }}" class="nav-link px-2 text-muted">Santé</a></li>
+      @if(auth.isGuest)
+        <li class="nav-item"><a class="nav-link px-2 text-muted" href="{{ route('login') }}" role="button">Se connecter</a></li>
+        <li class="nav-item"><a class="nav-link px-2 text-muted" href="{{ route('register') }}" role="button">S'enregistrer</a></li>
+      @endif
+    </ul>
+  </footer>

@@ -1,0 +1,29 @@
+@layout('layouts/main')
+@set('title', 'Créer un compte')
+
+@section('body')
+<main class="form-signin w-25 m-auto container">
+  <form action="{{ route('auth.register') }}" method="POST">
+    <img class="mb-4" src="/assets/img/logo.jpg" alt="cinecool" width="72" height="72">
+    <h1 class="h3 mb-4 fw-normal">Créer un compte</h1>
+
+    <div class="form-floating mb-2">
+      <input type="email" required class="form-control" id="email" name="email" placeholder="Entrer votre adresse email"
+        autocomplete="off">
+      <label for="email">Adresse email</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input type="password" required class="form-control" id="password" name="password"
+        placeholder="Entrer un mot de passe" autocomplete="off">
+      <label for="password">Mot de passe</label>
+    </div>
+    <div class="checkbox mt-3 mb-4">
+      <label>
+        <input type="checkbox" required name="rgpd" value="rgpd"> Je comprends que mes données personnelles seront
+        enregistrées pendant une durée limitée pour accéder aux services
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Créer un compte</button>
+  </form>
+</main>
+@end

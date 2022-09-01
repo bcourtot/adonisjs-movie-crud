@@ -1,0 +1,45 @@
+@layout('layouts/main')
+@set('title', 'Films')
+
+@section('body')
+<main class="container">
+  <h1 class="display-2">Cinechoc</h1>
+  <h2 class="display-5">Liste des films</h2>
+
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Nom du film</th>
+        <th scope="col">Date de sortie</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Réalisateur</th>
+        @if(auth.isLoggedIn)
+          <th scope="col">Modifier</th>
+          <th scope="col">Supprimer</th>
+        @endif
+      </tr>
+    </thead>
+    <tbody>
+      @each(movie in movies)
+      <tr>
+        <td> <a class="custom-link" href="{{ route('movie.show', [movie.id]) }}">{{ movie.name }}</a> </td>
+        <td>{{ new Date(movie.year).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.director }}</td>
+        @if(auth.isLoggedIn)
+          <td><a class="btn btn-warning" href="{{ route('movie.edit', [movie.id]) }}">Modifier le film</a></td>
+          <td><a class="btn btn-danger" href="{{ route('movie.destroy', [movie.id]) }}">Supprimer le film</a></td>
+        @endif
+      </tr>
+      @endeach
+    </tbody>
+  </table>
+  @if(auth.isLoggedIn)
+    <ul class="d-flex justify-content-end list-group-horizontal my-5">
+      <li class="list-group-item mx-3"><a class="btn btn-primary" href="{{ route('movie.create') }}">Ajouter un film</a></li>
+    </ul>
+  @endif
+</main>
+
+
+@end

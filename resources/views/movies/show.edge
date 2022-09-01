@@ -1,0 +1,20 @@
+@layout('layouts/main')
+@set('title', 'Détail du film {{movie.name}}')
+
+@section('body')
+<main class="container">
+  <section class="w-50 mx-auto mt-5">
+    <h1 class="display-2">{{ movie.name }}</h1>
+    <hr>
+    <p>Réalisateur : {{  movie.director }}</p>
+    <p>Genre : {{ movie.genre }} </p>
+    <p>Date de sortie du film : {{ new Date(movie.year).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
+    @if(auth.isLoggedIn)
+      <div class="mt-3 text-center">
+        <a class="btn btn-warning m-3" href="{{ route('movie.edit', [movie.id]) }}">Modifier le film</a>
+        <a class="btn btn-danger m-3" href="{{ route('movie.destroy', [movie.id]) }}">Supprimer le film</a>
+      </div>
+    @endif
+  </section>
+</main>
+@endsection

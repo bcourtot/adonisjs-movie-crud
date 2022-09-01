@@ -1,0 +1,32 @@
+@layout('layouts/main')
+@set('title', 'Statut santé')
+
+@section('body')
+<main class="container mx-auto my-5 w-50">
+  <section>
+    <h1 class="mb-4">Santé de l'application</h1>
+
+    @set('icons', ['/assets/img/no.png', '/assets/img/yes.png'] )
+    @set('alt', ['no', 'yes'] )
+
+
+    @if(report.healthy)
+      <p>En bonne santé : <img src={{ icons[1] }} alt={{ alt[1] }} class="ms-2" width="24" height="24" /> </p>
+    @else
+      <p>En mauvaise santé : <img src={{ icons[0] }} alt={{ alt[0] }} class="ms-2" width="24" height="24" /> </p>
+    @end
+
+    @if(report.report.env.health.healthy)
+      <p>Rapport environnement : <img src={{ icons[1] }} alt={{ alt[1] }} class="ms-2" width="24" height="24" /></p>
+    @else
+      <p>Rapport environnement : <img src={{ icons[0] }} alt={{ alt[0] }} class="ms-2" width="24" height="24" /></p>
+    @end
+
+    @if(report.report.appKey.health.healthy)
+      <p>Rapport clé API: <img src={{ icons[1] }} alt={{ alt[1] }} class="ms-2" width="24" height="24" /></p>
+    @else
+      <p>Rapport clé API: <img src={{ icons[0] }} alt={{ alt[0] }} class="ms-2" width="24" height="24" /></p>
+    @end
+  </section>
+</main>
+@end
