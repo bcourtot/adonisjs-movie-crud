@@ -19,21 +19,27 @@ Here're some of the project's best features:
 npm i
 ```
 
-<p>2. Edit your .env to check your database</p>
+<p>2. Run node ace configure @adonisjs/lucid </p>
 
-<p>3. Create tables</p>
+```
+node ace configure @adonisjs/lucid
+```
+
+<p>3. Copy/paste .env.example, rename it .env and edit it with your database credentials</p>
+
+<p>4. Create tables</p>
 
 ```
 node ace migration:run
 ```
 
-<p>4. Create some data</p>
+<p>5. Create some data</p>
 
 ```
 node ace db:seed
 ```
 
-<p>5. Launch the server</p>
+<p>6. Launch the server</p>
 
 ```
 node ace serve --watch
